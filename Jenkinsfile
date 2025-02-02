@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Main') {
             when {
-                branch 'main'
+                branch 'origin/main'
             }
             steps {
                 echo 'In main'
@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Dev') {
             when {
-                branch 'dev'
+                branch 'origin/dev'
             }
             steps {
                 echo 'In dev'
