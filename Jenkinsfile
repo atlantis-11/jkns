@@ -2,19 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Main') {
+            when {
+                branch 'main'
+            }
             steps {
-                sh 'ls'
+                echo 'In main'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'python'
+        stage('Dev') {
+            when {
+                branch 'dev'
             }
-        }
-        stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                echo 'In dev'
             }
         }
     }
